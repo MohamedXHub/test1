@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCookie</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #111;
+            background: #fff;
+            font-size: 17px;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 28px 32px 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 0 0 18px;
+            line-height: 1.1;
+        }
+
+        nav ul {
+            margin: 0;
+            padding-left: 28px;
+        }
+
+        nav li {
+            margin: 3px 0;
+        }
+
+        a {
+            color: #000080;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 12px 32px 30px;
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 29px;
+            margin: 12px 0 18px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin: 22px 0 14px;
+        }
+
+        p {
+            margin: 0 0 18px;
+            line-height: 1.45;
+        }
+
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        footer {
+            padding: 8px 32px 22px;
+            font-size: 16px;
+        }
+
+        .recipe-page main {
+            padding-top: 10px;
+        }
+
+        .recipe-page h2 {
+            margin-bottom: 20px;
+        }
+
+        .recipe-page p.intro {
+            margin-bottom: 18px;
+        }
+
+        .recipe-page ol {
+            padding-left: 34px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                font-size: 16px;
+            }
+
+            header, main, footer {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <!-- HOME -->
+    <section id="homePage">
+        <header>
+            <h1>Welcome to TCookie!</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showHome(); return false;">Home</a></li>
+                    <li><a href="#" onclick="showRecipe(); return false;">Secret Recipe</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Discover the Unique Taste of TCookie</h2>
+
+            <p>
+                Welcome to the home of TCookie, where we reinvent the cookie with our
+                exclusive recipe. Intrigued? Dive into the secret behind our delicious
+                creation and why it stands out from the rest.
+            </p>
+
+            <a href="#" onclick="showRecipe(); return false;">
+                Discover the Secret Recipe
+            </a>
+        </main>
+
+        <footer>
+            © 2024 TCookie. All rights reserved.
+        </footer>
+    </section>
+
+
+    <!-- SECRET RECIPE -->
+    <section id="recipePage" class="recipe-page hidden">
+        <header>
+            <h1>TCookie's Secret Recipe</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showHome(); return false;">Home</a></li>
+                    <li><a href="#" onclick="showRecipe(); return false;">Secret Recipe</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>The Secret Behind TCookie</h2>
+
+            <p class="intro">
+                Ready to bake the most extraordinary cookies you've ever tasted?
+                Here's how:
+            </p>
+
+            <h3>Ingredients:</h3>
+
+            <ul>
+                <li>1 secret ingredient that defines TCookie</li>
+                <li>1 cup of love</li>
+                <li>2 cups of flour</li>
+                <li>1/2 cup of sugar</li>
+            </ul>
+
+            <h3>Instructions:</h3>
+
+            <ol>
+                <li>Start with the secret ingredient to infuse the unique TCookie flavor.</li>
+                <li>Mix in love, flour, and sugar until the dough forms.</li>
+                <li>Bake at 350°F for 12 minutes or until golden brown.</li>
+            </ol>
+
+            <p>
+                Enjoy your TCookie creation and share the joy with friends and family!
+            </p>
+        </main>
+
+        <footer>
+            © 2024 TCookie. All rights reserved.
+        </footer>
+    </section>
+
+</div>
+
+<script>
+    function showHome() {
+        document.getElementById("homePage").classList.remove("hidden");
+        document.getElementById("recipePage").classList.add("hidden");
+        document.title = "TCookie";
+        window.scrollTo(0, 0);
+    }
+
+    function showRecipe() {
+        document.getElementById("homePage").classList.add("hidden");
+        document.getElementById("recipePage").classList.remove("hidden");
+        document.title = "TCookie Secret Recipe";
+        window.scrollTo(0, 0);
+    }
+</script>
+
+</body>
+</html>
